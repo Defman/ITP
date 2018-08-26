@@ -15,10 +15,17 @@ public class Die {
      * Constructor for Die objects
      */
     public Die() {
-        random = new Random();
-        this.roll();
+        this(new Random());
     }
 
+    /**
+     * Constructor for Die objects
+     */
+    public Die(Random random) {
+        this.random = random;
+        this.roll();
+    }
+    
     /**
      * Obtain a new number of eyes for this die
      */
