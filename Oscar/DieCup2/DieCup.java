@@ -14,8 +14,11 @@ public class DieCup {
      * Constructor for DieCup objects
      */
     public DieCup(int sides1, int sides2) {
+        if(sides1+sides2>3){
         d1 = new Die(sides1);
         d2 = new Die(sides2);
+    }
+    else System.out.println("Please add dice");
     }
 
     /**

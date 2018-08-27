@@ -15,7 +15,7 @@ public class DieCup {
     /**
      * Constructor for DieCup objects
      */
-    public DieCup(int noOfDies) {sa
+    public DieCup(int noOfDies) {
         dies = new ArrayList();
       for(int i = 0; i < noOfDies; i++){
           dies.add(new Die(6));
