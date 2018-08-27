@@ -19,6 +19,13 @@ public class DieCup {
     /**
      * Constructor for DieCup objects
      */
+    public DieCup(int die1, int die2) {
+        this(new Die(die1), new Die(die2));
+    }
+    
+    /**
+     * Constructor for DieCup objects
+     */
     public DieCup(Die d1, Die d2) {
         this.d1 = d1;
         this.d2 = d2;

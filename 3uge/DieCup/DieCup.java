@@ -1,3 +1,7 @@
+import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * This class models a DieCup (rafleb�ger)
  * 
@@ -5,23 +9,28 @@
  * @version 2017-05-01
  **/
 public class DieCup {
-    private Die d1;   //first die
-    private Die d2;   //second die
+    private Collection<Die> dies;
     private int maxEyes;
-    
+    private int sum;
+
     /**
      * Constructor for DieCup objects
      */
-    public DieCup() {
-        this(new Die(), new Die());
+    public DieCup(int noOfDies) {
+        if (noOfDies < 2)
+            throw new IllegalArgumentException("DieCup cannot have less than two dies.");
+        this.dies = new ArrayList(noOfDies);
+        for (int i = 0; i < noOfDies; i++)
+            dies.add(new Die());
     }
     
     /**
      * Constructor for DieCup objects
      */
-    public DieCup(Die d1, Die d2) {
-        this.d1 = d1;
-        this.d2 = d2;
+    public DieCup(Die...dies) {
+        if (dies.length < 2)
+            throw new IllegalArgumentException("DieCup cannot have less than two dies.");
+        this.dies = Arrays.asList(dies);
         this.maxEyes = 0;
     }
     
@@ -38,16 +47,18 @@ public class DieCup {
      * Obtain a new number of eyes for both dies
      */
     public int roll() {
-        int sum = this.d1.roll() + this.d2.roll();
-        this.maxEyes = sum > maxEyes ? sum : maxEyes;
-        return sum;
+        this.sum = 0;
+        for (Die die : dies)
+            this.sum += die.roll();
+        this.maxEyes = this.sum > this.maxEyes ? this.sum : this.maxEyes;
+        return this.sum;
     }
     
     /**
      * Return the sum of the number of eyes shown by the two dies
      */
     public int getEyes() {
-        return this.d1.getEyes() + this.d2.getEyes();
+        return this.sum;
     }
     
     public int getMaxEyes() {
