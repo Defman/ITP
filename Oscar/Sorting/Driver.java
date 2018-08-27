@@ -5,14 +5,15 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Driver extends InsertionSort
+public class Driver
 {
-    InsetionSort ob;
+    private InsertionSort ob;
     int[] myArray;
     Driver(int[] A){
         myArray = A;
     }
     public void mergeSortArray(){
-    
+        ob.insertionSort(myArray);
+
     }
 }
