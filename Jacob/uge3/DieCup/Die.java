@@ -22,6 +22,13 @@ public class Die {
     /**
      * Constructor for Die objects
      */
+    public Die(Random random) {
+        this(random, 6);
+    }
+
+    /**
+     * Constructor for Die objects
+     */
     public Die(int sides) {
         this(new Random(), sides);
     }

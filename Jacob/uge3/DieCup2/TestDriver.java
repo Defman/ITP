@@ -43,4 +43,8 @@ public class TestDriver
         }
         System.out.printf("Average no of eyes: %.2f\n", average);
     }
+    
+    public static void splitDigits(int digits) {
+        return;
+    }
 }

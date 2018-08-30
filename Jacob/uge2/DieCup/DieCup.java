@@ -1,6 +1,4 @@
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Random;
 
 /**
  * This class models a DieCup (rafleb�ger)
@@ -9,30 +7,32 @@ import java.util.Arrays;
  * @version 2017-05-01
  **/
 public class DieCup {
-    private Collection<Die> dies;
+    private static ThreadLocal<Random> random = ThreadLocal.withInitial(Random::new);
+
+    private Die d1;   //first die
+    private Die d2;   //second die
     private int maxEyes;
-    private int sum;
     
     /**
      * Constructor for DieCup objects
      */
-    public DieCup(Die...dies) {
-        if (dies.length < 1)
-            throw new IllegalArgumentException("DieCup cannot have less than one die.");
-        this.dies = Arrays.asList(dies);
-        this.maxEyes = 0;
+    public DieCup() {
+        this(new Die(random.get()), new Die(random.get()));
     }
     
     /**
      * Constructor for DieCup objects
      */
-    public DieCup(int...sides) {
-        if (sides.length < 1)
-            throw new IllegalArgumentException("DieCup cannot have less than one die.");
-        
-        this.dies = new ArrayList(sides.length);
-        for (int side : sides)
-            this.dies.add(new Die(side));
+    public DieCup(int die1, int die2) {
+        this(new Die(die1), new Die(die2));
+    }
+    
+    /**
+     * Constructor for DieCup objects
+     */
+    public DieCup(Die d1, Die d2) {
+        this.d1 = d1;
+        this.d2 = d2;
         this.maxEyes = 0;
     }
     
@@ -49,18 +49,16 @@ public class DieCup {
      * Obtain a new number of eyes for both dies
      */
     public int roll() {
-        this.sum = 0;
-        for (Die die : dies)
-            this.sum += die.roll();
-        this.maxEyes = this.sum > this.maxEyes ? this.sum : this.maxEyes;
-        return this.sum;
+        int sum = this.d1.roll() + this.d2.roll();
+        this.maxEyes = sum > maxEyes ? sum : maxEyes;
+        return sum;
     }
     
     /**
      * Return the sum of the number of eyes shown by the two dies
      */
     public int getEyes() {
-        return this.sum;
+        return this.d1.getEyes() + this.d2.getEyes();
     }
     
     public int getMaxEyes() {
