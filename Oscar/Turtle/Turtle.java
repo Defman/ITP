@@ -27,10 +27,7 @@ public class Turtle extends Actor {
      * @param size   Length of each side.
      */
     public void triangle(double size) {
-        for (int i=0; i<3; i++) {
-            move(size); 
-            turn(120);
-        }
+        polygon(3,size);
     }
 
     /**
@@ -39,10 +36,7 @@ public class Turtle extends Actor {
      * @param size   Length of each side.
      */
     public void square(double size) {
-        for (int i=0; i<4; i++) {
-            move(size); 
-            turn(90);
-        }
+        polygon(4,size);
     }
 
     /**
@@ -51,21 +45,37 @@ public class Turtle extends Actor {
      * @param n       Number of sides.
      * @param size    Length of each side.
      */
-    public void polygon(int n, double size) {}
+    public void polygon(int n, double size) {
+        for(int i = 0; i<n;i++){
+            move(size);
+            turn(360.0/n);
+
+        }
+    }
 
     /**
      * Draws a circle.
      * 
      * @param radius    Length of radius.
      */
-    public void circle(double radius) {}
+    public void circle(double radius) {
+        polygon(100,2*radius*Math.PI/100);
+
+    }
 
     /**
      * Draws a star with five corners.
      * 
      * @param size   Length of each side.
      */
-    public void star(double size) {}
+    public void star(double size) {
+        for(int i = 0; i<5;i++){
+            move(size);
+            turn(36+180);
+
+        }
+
+    }
 
     /**
      * Draws a spiral.
@@ -74,7 +84,13 @@ public class Turtle extends Actor {
      * @param delta    Difference in length between two succeeding sides
      *                 (equal to shortest side).
      */
-    public void spiral(int n, double delta) {}
+    public void spiral(int n, double delta) {
+        for(int i = 0; i<n; i++){
+            move(120-delta*i);
+            turn(90);
+
+        }
+    }
 
     /**
      * Jumps to specified coordinates without drawing and without turning.
@@ -83,7 +99,11 @@ public class Turtle extends Actor {
      * @param x    x coordinate.
      * @param y    y coordinate.
      */
-    public void jumpTo(double x, double y) {}
+    public void jumpTo(double x, double y) {
+        penUp();    
+        moveTo(x,y);
+        penDown();
+    }
 
     /**
      * Jumps as specified without drawing and without turning.
@@ -92,7 +112,24 @@ public class Turtle extends Actor {
      * @param x     Distance forward.
      * @param y     Distance sideways (+ is right and - is left).
      */
-    public void jump(double x, double y) {}
+    public void jump(double x, double y) {
+        penUp();
+        move(x);
+        if(y>0){
+        turn(90);
+        move(y);
+        turn(-90);
+        }
+        else if(y<0){
+            turn(-90);
+            move(y);
+            turn(90);
+        }
+        else{}
+        penDown();
+        
+
+    }
 
     /**
      * Draws a number of squares "behind" each other.
@@ -101,7 +138,12 @@ public class Turtle extends Actor {
      * @param size    Size of squares.
      * @param gap     Horizontal and vertical gap between adjacent squares.
      */
-    public void squares(int n, double size, double gap) {}
+    public void squares(int n, double size, double gap) {
+        for(int i = 0; i<n; i++){
+        square(size);
+        jump(gap,gap);
+    }
+    }
 
     /**
      * Draws a number of squares inside each other.
@@ -274,7 +316,7 @@ public class Turtle extends Actor {
         jumpTo(550,300);
         turnTo(0);
     }
-    
+
     /**
      * This STATIC method allows the instructors (and the students) to see
      * whether all the implemented methods in Turtle 1 work as expected.
