@@ -1,7 +1,7 @@
 import java.util.Random;
 
 /**
- * This class models a DieCup (rafleb�ger)
+ * This class models a DieCup (raflebæger)
  * 
  * @author Kurt Jensen
  * @version 2017-05-01
