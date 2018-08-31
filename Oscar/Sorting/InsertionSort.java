@@ -7,8 +7,6 @@ import java.util.*;
  */
 public class InsertionSort 
 {
-    private static int numberOfCallsInForLoop = 0;
-    private static int numberOfCallsInWhileLoop = 0;
     public static void insertionSort(int arr[]) 
     {  
         int n = arr.length;  
@@ -19,12 +17,10 @@ public class InsertionSort
 
             while ( (j > -1) && ( arr [j] > key ) ) 
             {  
-                numberOfCallsInWhileLoop += 1;
                 arr [j+1] = arr [j];  
                 j--;  
             }  
             arr[j+1] = key;
-            numberOfCallsInForLoop += 1;
             printArray(arr);
         }  
     }
@@ -35,6 +31,6 @@ public class InsertionSort
         {  
             System.out.print(array[i] + " ");  
         } 
-        System.out.println("Total number of calls"+(numberOfCallsInForLoop+numberOfCallsInWhileLoop));
+        System.out.println();
     }
 }
