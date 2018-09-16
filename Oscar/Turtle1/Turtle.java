@@ -152,7 +152,8 @@ public class Turtle extends Actor {
      * @param gap    Gap between adjacent squares.
      *               (equal to size of smallest square).
      */
-    public void squares2(int n, double gap) {}
+    public void squares2(int n, double gap) {
+    }
 
     /**
      * Draws a number of squares on a "horizontal" line.
