@@ -1,0 +1,42 @@
+\documentclass[danmark]{../AU}
+\usepackage[danish]{babel}
+\usepackage[style=danish]{csquotes}
+\MakeOuterQuote{"}
+
+\title{Uge 1}
+\author{Jacob Emil Ulvedal Rosborg}
+\date{august 2018}
+
+\begin{document}
+\section*{Opgave 4}
+Mulige udfald for to seks siddet terninger
+
+\begin{equation}
+  udfald = 
+  \begin{Bmatrix}
+  (1,1) & (1,2) & \cdots & (1,6) \\
+  (2,1) & (2,2) & \cdots & (2,6) \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  (6,1) & (6,2) & \cdots & (6,6) 
+ \end{Bmatrix}
+\end{equation}
+
+Grundet symmetrien af vores udfaldsrum finder vi at sandsyneligheden $P(n)$ for summen $n$ af to terninger er
+
+\begin{equation}
+  P(n) = 
+  \begin{cases} 
+      \frac{n - 1}{36} & 0 < n \leq 7 \\
+      \frac{13 - n}{36} & 7 < x \leq 12
+   \end{cases}
+   \quad n \in \mathbb{N} : 0 < n \leq 12
+\end{equation}
+
+Herved finder vi at gennemsnittet for udfaldsrummet er
+
+\begin{align}
+  average &= \sum n P(n) \Rightarrow \\
+  average &= 1 P(1) + 2 P(2) + \ldots + 12 P(12) = 7
+\end{align}
+
+\end{document}
