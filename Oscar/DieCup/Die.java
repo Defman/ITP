@@ -1,5 +1,7 @@
+
 // import class for generation of random numbers
 import java.util.Random;
+
 /**
  * This class models a Die (terning)
  * 
@@ -7,11 +9,11 @@ import java.util.Random;
  * @version 2017-01-05
  */
 public class Die {
-    private Random random;   //used for generation of random numbers
-    private int eyes;        //number of eyes shown
+    private Random random; // used for generation of random numbers
+    private int eyes; // number of eyes shown
 
-    /**a
-     * Constructor for Die objects
+    /**
+     * a Constructor for Die objects
      */
     public Die() {
         random = new Random();
@@ -21,7 +23,7 @@ public class Die {
      * Obtain a new number of eyes for this die
      */
     public void roll() {
-        eyes = random.nextInt(6) + 1; 
+        eyes = random.nextInt(6) + 1;
     }
 
     /**

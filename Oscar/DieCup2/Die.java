@@ -1,5 +1,7 @@
+
 // import class for generation of random numbers
 import java.util.Random;
+
 /**
  * This class models a Die (terning)
  * 
@@ -7,18 +9,17 @@ import java.util.Random;
  * @version 2017-01-05
  */
 public class Die {
-    private Random random;   //used for generation of random numbers
-    private int eyes;       //number of eyes shown
+    private Random random; // used for generation of random numbers
+    private int eyes; // number of eyes shown
     private int sides;
 
     /**
      * Constructor for Die objects
      */
     public Die(int noOfSides) {
-        if(noOfSides<2){
+        if (noOfSides < 2) {
             System.out.print("Please create a die with sides greater than 2!");
-        }
-        else{
+        } else {
             sides = noOfSides;
         }
         random = new Random();
@@ -28,7 +29,7 @@ public class Die {
      * Obtain a new number of eyes for this die
      */
     public void roll() {
-        eyes = random.nextInt(sides) + 1; 
+        eyes = random.nextInt(sides) + 1;
     }
 
     /**
