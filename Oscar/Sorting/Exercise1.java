@@ -31,7 +31,7 @@ public class Exercise1
                 //If element before is below given element add it to the list
                 if (arr[i] > arr[j] && lis.get(i).size() < lis.get(j).size() + 1) {
                     lis.set(i, new ArrayList<>(lis.get(j)));
-                    System.out.println(lis);
+                    System.out.print(lis);
                 }
             }
             
