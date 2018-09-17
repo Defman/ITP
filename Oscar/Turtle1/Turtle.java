@@ -1,4 +1,3 @@
-
 /**
  * Turtle for drawing pictures on a World object.
  * 
@@ -49,7 +48,6 @@ public class Turtle extends Actor {
         for(int i = 0; i<n;i++){
             move(size);
             turn(360.0/n);
-
         }
     }
 
@@ -60,7 +58,6 @@ public class Turtle extends Actor {
      */
     public void circle(double radius) {
         polygon(100,2*radius*Math.PI/100);
-
     }
 
     /**
@@ -72,9 +69,7 @@ public class Turtle extends Actor {
         for(int i = 0; i<5;i++){
             move(size);
             turn(36+180);
-
         }
-
     }
 
     /**
@@ -142,7 +137,7 @@ public class Turtle extends Actor {
         for(int i = 0; i<n; i++){
         square(size);
         jump(gap,gap);
-    }
+    }   
     }
 
     /**
