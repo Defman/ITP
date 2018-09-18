@@ -135,7 +135,7 @@ public class Turtle{
 
         }
 
-        /*
+        /**
          * Draws a number of squares "behind" each other.
          * 
          * @param n    Number of squares.
@@ -152,7 +152,7 @@ public class Turtle{
             }
         }
 
-        /*
+        /**
          * Draws a number of squares inside each other.
          * 
          * @param n   Number of squares.
@@ -177,7 +177,7 @@ public class Turtle{
         }
     }
 
-    /*
+    /**
      * Draws a number of squares inside each other so that all upper left corners
      * are in the same point.
      * 
@@ -200,7 +200,7 @@ public class Turtle{
         public void squaresCornered(int n, double size) {
     }
 
-    /*
+    /**
      * Draws a number of triangles inside each other.
      * 
      * @param n    Number of triangles.
@@ -220,7 +220,7 @@ public class Turtle{
 
     }
 
-    /*
+    /**
      * Draws a number of squares inside each other.
      * 
      * @param n   Number of squares.
@@ -236,7 +236,7 @@ public class Turtle{
         }
     }
 
-    /*
+    /**
      * Draws a Koch curve.
      * 
      * @param n    Degree of Koch curve.
@@ -259,7 +259,7 @@ public class Turtle{
         }
     }
 
-    /*
+    /**
      * Draws a Koch flake.
      * 
      * @param n    Degree of Koch curves.
@@ -276,7 +276,7 @@ public class Turtle{
         public void kochFlake(int n, double size) {
     }
 
-    /*
+    /**
      * Draws a Sierpinski curve.
      * 
      * @param n    Degree of Sierpinski curve.
