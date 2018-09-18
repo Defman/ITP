@@ -11,8 +11,7 @@ public class DieCup {
     private ArrayList<Die> dies;
     private int noOfEyes = 0;
     private double averageDieNo = 0;
-   
-
+    
     /**
      * Constructor for DieCup objects
      */
