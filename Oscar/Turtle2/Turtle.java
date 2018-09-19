@@ -5,7 +5,7 @@
  * @author Kurt Jensen.
  * @version 2017-01-05.
  */
-public class Turtle{
+public class Turtle extends Actor{
     /*
      * Instantiates a new Turtle object at the specified coordinates.
      */
